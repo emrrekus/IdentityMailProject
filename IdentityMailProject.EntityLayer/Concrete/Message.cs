@@ -14,6 +14,7 @@ namespace IdentityMailProject.EntityLayer.Concrete
         public string Content { get; set; }
         public DateTime SentDate {  get; set; } 
 
+        public bool IsRead { get; set; }
         public int CategoryId { get; set; }
         public Category Category { get; set; }
 

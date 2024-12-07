@@ -1,7 +1,17 @@
+using IdentityMailProject.DataAccessLayer.Context;
+using IdentityMailProject.EntityLayer.Concrete;
+using IdentityMailProject.PresentationLayer.Models;
+
+using Microsoft.AspNetCore.Identity;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+
+builder.Services.AddDbContext<IdentityMailContext>();
+builder.Services.AddIdentity<AppUser, AppRole>().AddEntityFrameworkStores<IdentityMailContext>().AddDefaultTokenProviders().AddErrorDescriber<CustomIdentityErrorValidator>();
 
 var app = builder.Build();
 

@@ -160,6 +160,9 @@ namespace IdentityMailProject.DataAccessLayer.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<bool>("IsRead")
+                        .HasColumnType("bit");
+
                     b.Property<DateTime>("SentDate")
                         .HasColumnType("datetime2");
 
