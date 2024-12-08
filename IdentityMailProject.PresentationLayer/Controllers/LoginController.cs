@@ -1,11 +1,13 @@
 ﻿using IdentityMailProject.EntityLayer.Concrete;
 using IdentityMailProject.PresentationLayer.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using System.ComponentModel.DataAnnotations;
 
 namespace IdentityMailProject.PresentationLayer.Controllers
 {
+    [AllowAnonymous]
     public class LoginController : Controller
     {
         private readonly SignInManager<AppUser> _signInManager;
